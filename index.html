@@ -258,6 +258,8 @@ h2.huge{font-weight:800;font-size:clamp(2.8rem,10.8vw,10rem);line-height:.84;let
 .track span+span::before{content:"→";margin-right:.6rem;color:var(--rteal)}
 .track span:nth-child(2){color:var(--rteal)}
 .lead{font:700 clamp(1.3rem,2.6vw,1.9rem)/1.2 var(--f-head);letter-spacing:-.01em;margin-bottom:1.2rem;text-wrap:balance}
+.medal-line{display:flex;gap:.8rem;align-items:flex-start;margin:1.6rem 0 0;padding:.95rem 1.15rem;border:1px solid rgba(233,194,90,.55);background:rgba(233,194,90,.09);color:#F6E3A6;font-weight:500;line-height:1.5}
+.medal-line span:first-child{font-size:1.5rem;line-height:1}
 .facts{margin:2rem 0 0;display:grid;border-top:1px solid var(--line2)}
 .facts div{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
 .facts dt{color:var(--mute);font:500 .7rem/1.6 var(--f-mono);letter-spacing:.12em}
@@ -278,6 +280,10 @@ h2.huge{font-weight:800;font-size:clamp(2.8rem,10.8vw,10rem);line-height:.84;let
 .wins li:hover{padding-left:1rem;background:linear-gradient(90deg,rgba(124,58,237,.18),transparent 70%)}
 .rank{font:800 clamp(3.4rem,8.6vw,8rem)/.85 var(--f-head);letter-spacing:-.06em;color:var(--fg);transition:color .4s}
 .wins li:hover .rank{color:var(--purple)}
+.rank.gold,.wins li:hover .rank.gold{background:linear-gradient(105deg,#9A6A12 0%,#E9C25A 22%,#FFF3B8 38%,#E9C25A 52%,#C8962E 72%,#9A6A12 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#C8962E;animation:goldshine 4.5s linear infinite;filter:drop-shadow(0 2px 6px rgba(154,106,18,.35))}
+.rank.gold small{display:block;margin-top:.7rem;font:600 clamp(.7rem,1.3vw,.95rem)/1 var(--f-mono);letter-spacing:.42em;-webkit-text-fill-color:#9A6A12;color:#9A6A12}
+@keyframes goldshine{0%{background-position:120% 0}100%{background-position:-100% 0}}
+@media (prefers-reduced-motion:reduce){.rank.gold{animation:none}}
 .wins h3{font-weight:800;font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:-.02em}
 .wins p{color:var(--body)}
 .wins .sub{color:var(--mute);font-size:.92rem}
@@ -311,6 +317,7 @@ h2.huge{font-weight:800;font-size:clamp(2.8rem,10.8vw,10rem);line-height:.84;let
 .pill{display:inline-flex;align-items:center;gap:.5rem;width:max-content;padding:.4rem .7rem;font:500 .68rem/1 var(--f-mono);letter-spacing:.12em;border:1px solid currentColor}
 .pill::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
 .pill.ok{color:#5fd68a}
+.pill.gold{color:#E9C25A}
 .pill.prog{color:var(--orange)}
 .pill.prog::before{animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.25}}
@@ -408,6 +415,8 @@ body:not([data-view="home"]) .stage{display:none}
 .psec>h2{font:600 clamp(1.05rem,1.7vw,1.3rem)/1.35 var(--f-mono);letter-spacing:.08em;color:var(--a);align-self:start;position:sticky;top:4.6rem}
 @media (max-width:820px){.psec>h2{position:static}}
 .pbody{display:grid;gap:1.3rem;max-width:64ch;color:var(--body);font-size:1.06rem}
+.pbody .pimg{margin:.4rem 0 0;max-width:22rem;border:1px solid var(--line)}
+.pbody .pimg img{display:block;width:100%;height:auto}
 .pbody .lead{color:var(--fg);margin-bottom:0;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.1}
 .flow{list-style:none;margin:.4rem 0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
 .flow li{display:flex;align-items:center;gap:.6rem;font:700 clamp(.95rem,2vw,1.15rem)/1.2 var(--f-head);letter-spacing:.02em;border:1px solid var(--a);padding:.7rem 1rem;position:relative}
@@ -499,6 +508,7 @@ body:not([data-view="home"]) .stage{display:none}
         <div class="prose rv">
           <p>Technology has always been more than a field of study for me — it is a space to explore, experiment, and create.</p>
           <p>From technical projects and innovation challenges to developing my own patent-pending invention, I have continuously looked for ways to turn ideas into something tangible.</p>
+          <p>In 2026, that invention, Rakeez, earned me the Gold Medal at the Saudi Global Inventions &amp; Innovations Expo (SGiE 2026) in Jeddah. 🥇</p>
         </div>
         <div class="rv"><a class="btn" href="#about">MEET RAGHAD</a></div>
       </div>
@@ -600,6 +610,7 @@ body:not([data-view="home"]) .stage{display:none}
           <div class="prose">
             <p>The device recognises when a person’s attention has drifted away from the work in front of them, then responds with a graduated intervention that brings them back.</p>
           </div>
+          <p class="medal-line"><span aria-hidden="true">🥇</span><span>Awarded the Gold Medal at SGiE 2026, the Saudi Global Inventions &amp; Innovations Expo in Jeddah.</span></p>
           <div class="track" id="track" aria-label="Rakeez, Patent Pending, technical concept, prototype"><span>Rakeez</span><span>Patent Pending</span><span>Technical concept</span><span>Prototype</span></div>
           <dl class="facts" id="factsHome">
             <div><dt>Title</dt><dd>Non-wearable Distraction Detection and Adaptive Intervention Device</dd></div>
@@ -618,6 +629,7 @@ body:not([data-view="home"]) .stage{display:none}
     <div class="wrap">
       <div class="sh"><span class="num">05 / RECOGNITION</span><h2 class="big">PROJECTS THAT MADE AN IMPACT.</h2></div>
       <ul class="wins">
+        <li class="rv"><span class="rank gold">GOLD<small>MEDAL</small></span><div><h3>RAKEEZ</h3><p>Gold Medal — SGiE 2026</p><p class="sub">Saudi Global Inventions &amp; Innovations Expo · Jeddah · 2026</p></div><a href="#rakeez">PROJECT →</a></li>
         <li class="rv"><span class="rank">3RD</span><div><h3>EBDAATHON</h3><p>Third Place — 2026</p><p class="sub">Sanabel — Islamic Financial Solutions Track</p></div><a href="#sanabil">PROJECT →</a></li>
         <li class="rv"><span class="rank">TOP 5</span><div><h3>HASEEB SMART TAX</h3><p>Top 5 — Saudi Accounting Association Hackathon</p><p class="sub">2024</p></div><span></span></li>
         <li class="rv"><span class="rank">3RD</span><div><h3>INARA</h3><p>Third Place — Fifth Scientific Forum</p><p class="sub">University of Jeddah · 2022 · Individual Participant</p></div><a href="#inara">PROJECT →</a></li>
@@ -625,7 +637,7 @@ body:not([data-view="home"]) .stage{display:none}
       </ul>
       <div class="stats rv">
         <div class="stat"><b data-count="10" data-suffix="+">10+</b><span class="mono">Hackathons &amp; Innovation Programs</span></div>
-        <div class="stat win"><b data-count="4" data-suffix="">4</b><span class="mono">Winning Placements</span></div>
+        <div class="stat win"><b data-count="5" data-suffix="">5</b><span class="mono">Winning Placements</span></div>
       </div>
     </div>
   </section>
@@ -640,10 +652,10 @@ body:not([data-view="home"]) .stage{display:none}
           <div class="ex-text rv">
             <span class="mono num" style="color:var(--lav)">01 / SGiE 2026</span>
             <h3>SGiE 2026</h3>
-            <span class="pill ok">REGISTERED</span>
+            <span class="pill gold">GOLD MEDAL</span>
             <p class="full">Saudi Global Inventions &amp; Innovations Expo</p>
             <p class="where mono">Jeddah, Saudi Arabia · 2026</p>
-            <p>Exhibiting the patent-pending non-wearable distraction detection and adaptive intervention device as a registered participant.</p>
+            <p>Awarded the Gold Medal for the patent-pending non-wearable distraction detection and adaptive intervention device.</p>
           </div>
         </article>
         <article class="ex rev">
@@ -714,6 +726,7 @@ body:not([data-view="home"]) .stage{display:none}
       </div>
       <div class="prose" id="aCol2">
         <p>In 2026, that journey took a new direction when I developed and filed my own patent-pending invention: a non-wearable device designed to detect distraction and provide adaptive intervention.</p>
+        <p>That invention, Rakeez, went on to win the Gold Medal at the Saudi Global Inventions &amp; Innovations Expo (SGiE 2026) in Jeddah, in the Information Technology, AI &amp; Electronics track. 🥇</p>
         <p>Alongside my technical and innovation work, I gained professional experience within Saudi Airlines and the Ministry of Energy, where I learned to work within structured environments, collaborate with stakeholders, and translate ideas into practical initiatives.</p>
         <p>I am still exploring, still building, and still asking the same question that has followed me throughout my journey:</p>
         <p class="sig" id="sig">What if there’s a better way?</p>
@@ -753,7 +766,7 @@ body:not([data-view="home"]) .stage{display:none}
   /* Photography slots. Paste an image URL or data: URI to replace the designed placeholder. */
   /* The homepage About video. To use it on the About page too, remove the #story check where it is loaded. */
   var ABOUT_VIDEO = 'about-journey.mp4';
-  var IMG = {portrait:'',office:'',sgie:'',geneva:'',ebdaathon:'moments/m1.jpg',patent:'moments/m2.jpg',sgieph:'moments/m3.jpg',hackathons:'moments/m4.jpg',ministry:'moments/m5.jpg',prototype:'moments/m6.jpg',
+  var IMG = {portrait:'',office:'',sgie:'sgie/stage.jpg',geneva:'',ebdaathon:'moments/m1.jpg',patent:'moments/m2.jpg',sgieph:'moments/m3.jpg',hackathons:'moments/m4.jpg',ministry:'moments/m5.jpg',prototype:'moments/m6.jpg',
     /* project page galleries: three images each */
     rakeez_1:'rakeez/g1.png',rakeez_2:'rakeez/g2.png',rakeez_3:'rakeez/g3.png',makani_1:'makani/g1.jpg',makani_2:'makani/g2.jpg',makani_3:'makani/g3.jpg',quraa_1:'quraa/g1.png',quraa_2:'quraa/g2.png',quraa_3:'quraa/g3.png',inara_1:'inara/g1.png',inara_2:'inara/g2.png',inara_3:'inara/g3.png',sanabil_1:'sanabil/g1.png',sanabil_2:'sanabil/g2.png',sanabil_3:'sanabil/g3.png'};
 
@@ -761,7 +774,7 @@ body:not([data-view="home"]) .stage{display:none}
   var P = [
     {id:'rakeez', theme:'rakeez', tone:'dark', idx:'01 — RAKEEZ', name:'Rakeez', curtain:'#23A0BA', cink:'#04181c',
      sub:'A non-wearable desk device for distraction detection & adaptive intervention',
-     meta:['Patent Pending','SGiE 2026','Innovation Project'], logo:'Rakeez logo', logoImg:'logos/rakeez.svg', decor:'rings',
+     meta:['Patent Pending','Gold Medal · SGiE 2026','Innovation Project'], logo:'Rakeez logo', logoImg:'logos/rakeez.svg', decor:'rings',
      secs:[
       ['01 — WHAT IS RAKEEZ?',[
         ['p','Rakeez is a non-wearable desk device designed to detect early signs of distraction and provide adaptive interventions to help users regain focus.'],
@@ -778,7 +791,10 @@ body:not([data-view="home"]) .stage{display:none}
         ['p','The experience is designed around four simple stages:'],
         ['flow',['DETECT','MEASURE','INTERVENE','ADAPT']]]],
       ['04 — KEY FEATURES',[
-        ['list',[['Non-wearable','designed to remain on the user’s desk.'],['Camera-free','designed with privacy in mind.'],['Real-time detection','responds to changes rather than relying on fixed schedules.'],['Adaptive intervention','responses vary according to the detected state.']]]]]
+        ['list',[['Non-wearable','designed to remain on the user’s desk.'],['Camera-free','designed with privacy in mind.'],['Real-time detection','responds to changes rather than relying on fixed schedules.'],['Adaptive intervention','responses vary according to the detected state.']]]]],
+      ['05 — RECOGNITION',[
+        ['p','Rakeez was awarded the Gold Medal at the Saudi Global Inventions & Innovations Expo (SGiE 2026) in Jeddah, in the Information Technology, AI & Electronics track.'],
+        ['img','sgie/certificate.jpg','Gold Medal certificate and medal, SGiE 2026']]]
      ]},
     {id:'makani', theme:'makani', tone:'dark', idx:'02 — MAKANI', name:'Makani', curtain:'#4db6ff', cink:'#02111f', xh:true,
      sub:'A smart tracking device for people & personal belongings',
@@ -928,6 +944,7 @@ body:not([data-view="home"]) .stage{display:none}
       case 'chips': return '<ul class="chips">'+b[1].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';
       case 'stamp': return '<div class="stamp">'+b[1].map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div>';
       case 'list': return '<ul class="fgrid">'+b[1].map(function(x,i){return '<li><span class="fn mono">0'+(i+1)+'</span><b>'+esc(x[0])+'</b>'+(x[1]?'<span class="fd">'+esc(x[1].charAt(0).toUpperCase()+x[1].slice(1))+'</span>':'')+'</li>'}).join('')+'</ul>';
+      case 'img': return '<figure class="pimg"><img src="'+b[1]+'" alt="'+esc(b[2])+'" loading="lazy"></figure>';
       case 'facts': return factsHTML();
     }
     return '';
