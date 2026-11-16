@@ -287,6 +287,10 @@ h2.huge{font-weight:800;font-size:clamp(2.8rem,10.8vw,10rem);line-height:.84;let
 .wins h3{font-weight:800;font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:-.02em}
 .wins p{color:var(--body)}
 .wins .sub{color:var(--mute);font-size:.92rem}
+.vmodal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(8,6,14,.86);padding:1rem}
+.vmodal.on{display:flex}
+.vmodal video{max-height:88vh;max-width:min(92vw,520px);width:auto;height:auto;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.vmodal button{position:absolute;top:1rem;right:1.2rem;background:none;border:0;color:#fff;font:300 2.4rem/1 var(--f-body,system-ui);cursor:pointer;padding:.2rem .5rem}
 .wins a{color:var(--purple-d);font:500 .72rem/1 var(--f-mono);letter-spacing:.12em;text-decoration:none;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:.2rem}
 @media (max-width:640px){.wins li{grid-template-columns:minmax(0,1fr)}.wins li a{justify-self:start}}
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin-top:clamp(3rem,7vw,5rem)}
@@ -630,7 +634,7 @@ body:not([data-view="home"]) .stage{display:none}
       <div class="sh"><span class="num">05 / RECOGNITION</span><h2 class="big">PROJECTS THAT MADE AN IMPACT.</h2></div>
       <ul class="wins">
         <li class="rv"><span class="rank gold">GOLD<small>MEDAL</small></span><div><h3>RAKEEZ</h3><p>Gold Medal — SGiE 2026</p><p class="sub">Saudi Global Inventions &amp; Innovations Expo · Jeddah · 2026</p></div><a href="#rakeez">PROJECT →</a></li>
-        <li class="rv"><span class="rank">1ST</span><div><h3>DAFAH COMPETITION</h3><p>First Place — Best University Explainer · 2026</p><p class="sub">First Edition · Computer Architecture</p></div><span></span></li>
+        <li class="rv"><span class="rank">1ST</span><div><h3>DAFAH COMPETITION</h3><p>First Place — Best University Explainer · 2026</p><p class="sub">First Edition · Computer Architecture</p></div><a href="dafah/dafah-award.mp4" class="vid-open" data-video="dafah/dafah-award.mp4" data-poster="dafah/poster.jpg">WATCH →</a></li>
         <li class="rv"><span class="rank">3RD</span><div><h3>EBDAATHON</h3><p>Third Place — 2026</p><p class="sub">Sanabel — Islamic Financial Solutions Track</p></div><a href="#sanabil">PROJECT →</a></li>
         <li class="rv"><span class="rank">TOP 5</span><div><h3>HASEEB SMART TAX</h3><p>Top 5 Finalist — Saudi Accounting Association Hackathon</p><p class="sub">2024</p></div><span></span></li>
         <li class="rv"><span class="rank">3RD</span><div><h3>INARA</h3><p>Third Place — Fifth Scientific Forum</p><p class="sub">University of Jeddah · 2022 · Individual Participant</p></div><a href="#inara">PROJECT →</a></li>
@@ -1356,5 +1360,18 @@ body:not([data-view="home"]) .stage{display:none}
 })();
 </script>
 
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Award video"><button type="button" aria-label="Close">×</button><video controls playsinline preload="none"></video></div>
+<script>
+(function(){
+  var m=document.getElementById('vmodal'),v=m.querySelector('video');
+  function close(){v.pause();v.removeAttribute('src');v.load();m.classList.remove('on');document.body.style.overflow='';}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.vid-open');
+    if(a){e.preventDefault();v.poster=a.dataset.poster||'';v.src=a.dataset.video;m.classList.add('on');document.body.style.overflow='hidden';var p=v.play();if(p&&p.catch)p.catch(function(){});return;}
+    if(m.classList.contains('on')&&(e.target===m||e.target.closest('.vmodal button')))close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))close();});
+})();
+</script>
 </body>
 </html>
