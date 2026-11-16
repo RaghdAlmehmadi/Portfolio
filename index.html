@@ -359,6 +359,7 @@ h2.huge{font-weight:800;font-size:clamp(2.8rem,10.8vw,10rem);line-height:.84;let
 .foot{position:relative;background:var(--ink);color:var(--paper);padding-block:2rem;margin-top:calc(-1 * var(--sheet));border-radius:var(--sheet) var(--sheet) 0 0;padding-top:calc(2rem + var(--sheet))}
 .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem 2rem;color:rgba(245,242,234,.7)}
 .foot b{color:var(--paper)}
+#visits{margin-right:1.2rem}#visits b{color:var(--paper);font-weight:600}
 
 /* story indicator */
 .stage{position:fixed;left:var(--gut);bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));z-index:40;display:flex;gap:1.1rem;pointer-events:none;opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s}
@@ -752,7 +753,7 @@ body:not([data-view="home"]) .stage{display:none}
 <div id="projects"></div>
 </main>
 
-<footer class="foot"><div class="wrap"><span><b>Raghad Almihmadi</b> &nbsp; I build what I imagine.</span><span class="mono">© 2026</span></div></footer>
+<footer class="foot"><div class="wrap"><span><b>Raghad Almihmadi</b> &nbsp; I build what I imagine.</span><span class="mono"><span id="visits" hidden></span>© 2026</span></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1371,6 +1372,31 @@ body:not([data-view="home"]) .stage{display:none}
     if(m.classList.contains('on')&&(e.target===m||e.target.closest('.vmodal button')))close();
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))close();});
+})();
+</script>
+<script>
+/* Visitor counter (GoatCounter: no cookies, privacy-friendly).
+   Set GC_CODE to the GoatCounter account name to activate. */
+(function(){
+  var GC_CODE = '';        // e.g. 'raghad'  -> https://raghad.goatcounter.com
+  var SHOW_AFTER = 100;    // public count appears only after this many visits
+  if(!GC_CODE) return;
+  var s = document.createElement('script');
+  s.async = true; s.src = '//gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://' + GC_CODE + '.goatcounter.com/count');
+  document.head.appendChild(s);
+  setTimeout(function(){
+    fetch('https://' + GC_CODE + '.goatcounter.com/counter/TOTAL.json')
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        var n = parseInt(String(d.count).replace(/\D/g,''), 10);
+        if(n >= SHOW_AFTER){
+          var el = document.getElementById('visits');
+          el.innerHTML = '<b>' + n.toLocaleString('en-US') + '</b> visits';
+          el.hidden = false;
+        }
+      }).catch(function(){});
+  }, 1500);
 })();
 </script>
 </body>
