@@ -17,7 +17,7 @@
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&family=Cairo:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&family=Cairo:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* Layout concept: a digital magazine. Every section is a "sheet" with its own surface and composition,
    stacked so each rounded top slides over the one before. One type system, one motion language, one palette. */
@@ -845,6 +845,7 @@ html[dir="rtl"] .moments figcaption{text-align:right}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="demos.js"></script>
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1094,11 +1095,13 @@ html[dir="rtl"] .moments figcaption{text-align:right}
         '<p class="meta mono">'+(p.logo?'<span class="logo-slot'+(p.logoImg?' has-logo':'')+(p.logoWide?' wide':'')+'" title="'+esc(p.logo)+'">'+(p.logoImg?'<img src="'+p.logoImg+'" alt="'+esc(p.logo)+'">':'LOGO')+'</span>':'')+p.meta.map(esc).join(' · ')+'</p>'+
       '</div></header>'+
       '<div class="wrap">'+
+        '<section class="demo" data-demo="'+p.id+'"></section>'+
         p.secs.map(function(s){return '<section class="psec"><i class="rule"></i><h2>'+esc(s[0])+'</h2><div class="pbody">'+s[1].map(block).join('')+'</div></section>';}).join('')+
         '<section class="pgal" aria-label="'+(AR?esc(T('project images'))+' '+esc(p.name):esc(p.name)+' project images')+'">'+[1,2,3].map(function(n){return '<figure class="g'+n+'"><div class="slot" data-img="'+p.id+'_'+n+'"><i class="sl-in"></i><span class="mono">'+esc(T('PROJECT IMAGE'))+' 0'+n+'</span></div></figure>';}).join('')+'</section>'+
         '<div class="pnext"><a class="btn" href="#work">'+esc(T('ALL WORK'))+'</a><a class="nx" href="#'+next.id+'"><small>'+esc(T('NEXT PROJECT →'))+'</small>'+esc(next.name)+'</a></div>'+
       '</div>';
     host.appendChild(el);
+    if(window.DEMO) DEMO(el.querySelector('.demo'), p.id);
   });
   qa('.art').forEach(function(a){ if(a.hasAttribute('data-photo')) return; a.innerHTML = art(a.getAttribute('data-art')); });
   $('aTitle').innerHTML = '<span class="ln" aria-hidden="true">'+charsHTML($('aTitle').getAttribute('data-t'))+'</span>';
