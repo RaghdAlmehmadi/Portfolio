@@ -4,11 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Raghad Almihmadi</title>
+<script>
+/* Language: ?lang=ar|en in the link wins, then the visitor's saved choice, then English. */
+(function(){
+  var l='en';
+  try{ var q=new URLSearchParams(location.search).get('lang'); if(q==='ar'||q==='en'){ l=q; localStorage.setItem('lang',q); } else { var sv=localStorage.getItem('lang'); if(sv==='ar') l='ar'; } }catch(e){}
+  window.LANG=l; var d=document.documentElement; d.lang=l; d.dir=(l==='ar'?'rtl':'ltr');
+  if(l==='ar'){ document.title='رغد المحمادي'; document.write('<script src="i18n-ar.js"><\/script>'); }
+})();
+</script>
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&family=Cairo:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout concept: a digital magazine. Every section is a "sheet" with its own surface and composition,
    stacked so each rounded top slides over the one before. One type system, one motion language, one palette. */
@@ -470,6 +479,84 @@ body:not([data-view="home"]) .stage{display:none}
 .pg:nth-child(2){animation-delay:1.4s}.pg:nth-child(3){animation-delay:2.8s}
 @media (prefers-reduced-motion:reduce){.pg,.grain,.pill.prog::before,.scope::before,.ovf,.scroll i::after{animation:none}}
 
+/* language switch */
+.lang{background:none;border:1px solid var(--nline);color:var(--nfg);padding:.5rem .8rem;cursor:pointer;font:500 .72rem/1 var(--f-mono);letter-spacing:.08em;white-space:nowrap;transition:border-color .3s,background .3s,color .3s}
+.lang:hover{border-color:var(--orange)}
+.lang:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+html[lang="en"] .lang{font-family:'IBM Plex Sans Arabic',var(--f-mono),system-ui,sans-serif;font-size:.85rem;letter-spacing:0}
+@media (max-width:820px){.menu{margin-left:auto}.links{margin-left:0}}
+
+/* ---------- Arabic: right-to-left layout, Arabic type ---------- */
+html[lang="ar"]{--f-head:'Cairo','Manrope',system-ui,sans-serif;--f-body:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif;--f-mono:'IBM Plex Sans Arabic','IBM Plex Mono',system-ui,sans-serif}
+/* Arabic letters join, so no tracking anywhere, and headings need more line height than Latin caps */
+html[lang="ar"] *,html[lang="ar"] *::before,html[lang="ar"] *::after{letter-spacing:0!important}
+html[lang="ar"] .mono{font-size:.84rem;font-weight:500}
+html[lang="ar"] .num,html[lang="ar"] .chip,html[lang="ar"] .chips li,html[lang="ar"] .track span,html[lang="ar"] .facts dt,html[lang="ar"] .pill{font-size:.84rem}
+html[lang="ar"] .links a{font-size:.9rem}
+html[lang="ar"] .brand{font-size:.95rem;font-family:var(--f-head);font-weight:800}
+html[lang="ar"] .mega{font-size:clamp(2.9rem,9.6vw,8.2rem);line-height:1.12}
+html[lang="ar"] h2.huge{font-size:clamp(2.6rem,9.4vw,8.6rem);line-height:1.1}
+html[lang="ar"] h2.big{font-size:clamp(2rem,5.6vw,4.8rem);line-height:1.2}
+html[lang="ar"] .about-view .ah-title h1{font-size:clamp(3rem,11vw,10rem);line-height:1.1}
+html[lang="ar"] .pagehead h1,html[lang="ar"] .pj h1{line-height:1.15}
+html[lang="ar"] .pj h1{font-size:clamp(3.6rem,14vw,11rem)}
+html[lang="ar"] .contact h2{font-size:clamp(2.6rem,9vw,8rem);line-height:1.12}
+html[lang="ar"] .info h3{line-height:1.2;font-size:clamp(2.2rem,5.4vw,4.4rem)}
+html[lang="ar"] .card.static .info h3{font-size:clamp(1.7rem,3.8vw,3rem);max-width:none;line-height:1.3}
+html[lang="ar"] .ex h3{font-size:clamp(2.4rem,7vw,6rem);line-height:1.1}
+html[lang="ar"] .lead,html[lang="ar"] .sig,html[lang="ar"] .quote,html[lang="ar"] .qs,html[lang="ar"] .job h3,html[lang="ar"] .pj .sub,html[lang="ar"] .wins h3{line-height:1.35}
+html[lang="ar"] .sig{font-size:clamp(2rem,5vw,3.8rem)}
+html[lang="ar"] .moment .bq{font-size:clamp(2rem,8.4vw,8.4rem);line-height:1.2}
+html[lang="ar"] .bq span+span{padding-left:0;padding-right:7vw}
+html[lang="ar"] .rank{font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:1.1}
+html[lang="ar"] .rank.gold small{font-size:clamp(.9rem,1.5vw,1.2rem);margin-top:.4rem}
+html[lang="ar"] .stat b{line-height:1}
+html[lang="ar"] .prose,html[lang="ar"] .pbody,html[lang="ar"] .job li,html[lang="ar"] .info p{line-height:1.85}
+html[lang="ar"] .prose{max-width:52ch}
+html[lang="ar"] .btn{font-size:.9rem}
+/* reveal masks are tuned for Latin caps: give Arabic ascenders and descenders room */
+html[lang="ar"] .ln{padding:.2em 0 .3em;margin:-.2em 0 -.3em}
+html[lang="ar"] .w{padding-top:.22em;padding-bottom:.3em;margin-top:-.22em;margin-bottom:-.3em}
+/* numbers, e-mail and phone stay left-to-right inside right-to-left lines */
+html[dir="rtl"] .clist .cv,html[dir="rtl"] #visits{direction:ltr;text-align:right;unicode-bidi:isolate}
+
+/* mirrored positions */
+html[dir="rtl"] .links{margin-left:0;margin-right:auto}
+html[dir="rtl"] .menu{margin-left:0;margin-right:auto}
+@media (max-width:820px){html[dir="rtl"] .menu{margin-right:auto}html[dir="rtl"] .links{margin-right:0}}
+html[dir="rtl"] .links a::after{transform-origin:left}
+html[dir="rtl"] .links a:hover::after{transform-origin:right}
+html[dir="rtl"] .btn::after{content:"←"}
+html[dir="rtl"] .btn:hover::after{transform:translateX(-6px)}
+html[dir="rtl"] .btn.plain::after{content:none}
+html[dir="rtl"] .bignum{right:auto;left:-.04em}
+html[dir="rtl"] .bignum.l{left:auto;right:-.06em}
+html[dir="rtl"] .stage{left:auto;right:var(--gut)}
+html[dir="rtl"] .jobs{padding-left:0;padding-right:clamp(1.8rem,5vw,3.4rem)}
+html[dir="rtl"] .tline{left:auto;right:.3rem}
+html[dir="rtl"] .job::before{left:auto;right:calc(-1 * clamp(1.8rem,5vw,3.4rem) + .3rem - 6px)}
+html[dir="rtl"] .job li{padding-left:0;padding-right:1.3rem}
+html[dir="rtl"] .job li::before{left:auto;right:0}
+html[dir="rtl"] .go i::after{right:auto;left:0;transform:rotate(-135deg)}
+html[dir="rtl"] .wins li:hover{padding-left:0;padding-right:1rem;background:linear-gradient(270deg,rgba(124,58,237,.18),transparent 70%)}
+html[dir="rtl"] .track span+span::before{content:"←";margin-right:0;margin-left:.6rem}
+html[dir="rtl"] .flow li:not(:last-child)::after{content:"←";margin-right:0;margin-left:-.2rem}
+html[dir="rtl"] .clist a:hover{padding-left:0;padding-right:.6rem}
+html[dir="rtl"] .back:hover{transform:translateX(6px)}
+html[dir="rtl"] .quote{padding-left:0;padding-right:1.2rem;border-left:0;border-right:2px solid var(--a)}
+html[dir="rtl"] .note,html[dir="rtl"] .withheld{padding-left:0;padding-right:1rem;border-left:0;border-right:1px solid var(--a)}
+html[dir="rtl"] .flist li{padding:.85rem 1.6rem .85rem 0}
+html[dir="rtl"] .flist li::before{left:auto;right:0}
+html[dir="rtl"] .sun{right:auto;left:-6vw}
+html[dir="rtl"] .contact .sun{right:auto;left:-10vw}
+html[dir="rtl"] .inno-art{right:auto;left:-14vw}
+html[dir="rtl"] .pj .decor{right:auto;left:calc(var(--gut) * -.5)}
+html[dir="rtl"] .ghost{left:auto;right:-.03em}
+html[dir="rtl"] .rec .circ{right:auto!important;left:-10vw}
+html[dir="rtl"] .snd{right:auto;left:.7rem}
+html[dir="rtl"] .vmodal button{right:auto;left:1.2rem}
+html[dir="rtl"] .moments figcaption{text-align:right}
+
 #curtain{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;pointer-events:all;color:#04100f}
 #curtain .cn{font:800 clamp(3.5rem,16vw,13rem)/.9 var(--f-head);letter-spacing:-.05em;overflow:hidden;padding:.06em .02em .14em}
 </style>
@@ -481,6 +568,7 @@ body:not([data-view="home"]) .stage{display:none}
     <div class="links" id="links">
       <a href="#about">ABOUT</a><a href="#work">WORK</a><a href="#innovation">INNOVATION</a><a href="#exhibitions">EXHIBITIONS</a><a href="#contact">CONTACT</a>
     </div>
+    <button class="lang mono" id="langBtn" type="button" aria-label="Switch language">العربية</button>
   </div>
 </nav>
 
@@ -767,6 +855,31 @@ body:not([data-view="home"]) .stage{display:none}
   var $ = function(id){return document.getElementById(id)};
   var qa = function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 
+  /* ---------- language: English by default; Arabic text comes from i18n-ar.js ---------- */
+  var LANG = window.LANG || 'en', AR = (LANG==='ar' && window.AR) ? window.AR : null;
+  var T = function(s){ return (AR && Object.prototype.hasOwnProperty.call(AR,s)) ? AR[s] : s; };
+  var MISSING = [];
+  function trDOM(){
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null), nodes=[];
+    while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      var p=n.parentNode; if(!p||/^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.nodeName)||(p.closest&&p.closest('.ghost,.bignum'))) return;
+      var raw=n.nodeValue, key=raw.replace(/\s+/g,' ').trim(); if(!key) return;
+      if(Object.prototype.hasOwnProperty.call(AR,key)) n.nodeValue=raw.match(/^\s*/)[0]+AR[key]+raw.match(/\s*$/)[0];
+      else if(/[A-Za-z]/.test(key)) MISSING.push(key);
+    });
+    qa('[aria-label],[alt],[title],[data-t],[data-hl]').forEach(function(el){
+      ['aria-label','alt','title','data-t','data-hl'].forEach(function(a){ if(el.hasAttribute(a)){ var v=el.getAttribute(a); if(Object.prototype.hasOwnProperty.call(AR,v)) el.setAttribute(a,AR[v]); } });
+    });
+    if(MISSING.length && /[?&]debug/.test(location.search)) console.warn('Untranslated:',MISSING);
+  }
+  var langBtn=$('langBtn'); langBtn.textContent = LANG==='ar' ? 'English' : 'العربية';
+  langBtn.addEventListener('click',function(){
+    try{ localStorage.setItem('lang', LANG==='ar'?'en':'ar'); }catch(e){}
+    var u=new URL(location.href); u.searchParams.delete('lang');
+    history.replaceState(null,'',u.pathname+u.search+u.hash); location.reload();
+  });
+
   /* Paste the full LinkedIn profile URL here; the Contact list links to it. */
   var LINKEDIN_URL = 'https://www.linkedin.com/in/raghad-almehmadi-b6577b220';
   /* Photography slots. Paste an image URL or data: URI to replace the designed placeholder. */
@@ -878,10 +991,19 @@ body:not([data-view="home"]) .stage{display:none}
         ['list',[['AI-powered farm assessment'],['FarmScore investment indicator'],['Satellite imagery & GIS integration'],['Optional IoT field sensor']]]]]
      ]}
   ];
+  if(AR){
+    var tt=function(x){ return Array.isArray(x)?x.map(tt):(typeof x==='string'?T(x):x); };
+    P.forEach(function(p){
+      p.idx=T(p.idx); p.name=T(p.name); p.sub=T(p.sub); p.meta=p.meta.map(T); if(p.logo) p.logo=T(p.logo);
+      p.secs=p.secs.map(function(s){ return [T(s[0]), s[1].map(function(b){ return [b[0]].concat(b.slice(1).map(tt)); })]; });
+    });
+  }
   var PERS = {rakeez:{d:.9,e:'power3.out',s:1},makani:{d:.8,e:'power2.out',s:1},quraa:{d:1.5,e:'sine.out',s:1.6},inara:{d:1,e:'back.out(1.4)',s:1},sanabil:{d:.9,e:'power2.out',s:1}};
 
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-  function charsHTML(t,hl){ return t.split(' ').map(function(w){return '<span class="wd'+(hl&&w===hl?' hl':'')+'">'+[].map.call(w,function(c){return '<span class="c">'+esc(c)+'</span>'}).join('')+'</span>'}).join(' '); }
+  function charsHTML(t,hl){
+    if(AR) return t.split(' ').map(function(w){return '<span class="wd'+(hl&&w===hl?' hl':'')+'"><span class="c">'+esc(w)+'</span></span>'}).join(' ');
+    return t.split(' ').map(function(w){return '<span class="wd'+(hl&&w===hl?' hl':'')+'">'+[].map.call(w,function(c){return '<span class="c">'+esc(c)+'</span>'}).join('')+'</span>'}).join(' '); }
   function splitWords(el){
     var out='';
     function words(txt,cls){ txt.split(/(\s+)/).forEach(function(t){ if(!t) return; out += /^\s+$/.test(t)?' ':'<span class="w"><span class="wi'+(cls?' '+cls:'')+'">'+esc(t)+'</span></span>'; }); }
@@ -955,6 +1077,7 @@ body:not([data-view="home"]) .stage{display:none}
     }
     return '';
   }
+  if(AR) trDOM();
   var host = $('projects');
   P.forEach(function(p,i){
     var next = P[(i+1)%P.length];
@@ -964,7 +1087,7 @@ body:not([data-view="home"]) .stage{display:none}
       '<header class="pagehead"><div class="decor" aria-hidden="true"><div class="dpar">'+art(p.decor)+'</div></div>'+
         (p.xh?'<div class="xh" aria-hidden="true"><i class="xv"></i><i class="xhh"></i><span class="xt mono">X 000 · Y 000</span></div>':'')+
         '<div class="wrap">'+
-        '<a class="back mono" href="#work">← ALL WORK</a>'+
+        '<a class="back mono" href="#work">'+esc(T('← ALL WORK'))+'</a>'+
         '<span class="num" style="display:block">'+esc(p.idx)+'</span>'+
         '<h1 aria-label="'+esc(p.name)+'"><span class="ln" aria-hidden="true">'+charsHTML(p.name)+'</span></h1>'+
         '<p class="sub">'+esc(p.sub)+'</p>'+
@@ -972,8 +1095,8 @@ body:not([data-view="home"]) .stage{display:none}
       '</div></header>'+
       '<div class="wrap">'+
         p.secs.map(function(s){return '<section class="psec"><i class="rule"></i><h2>'+esc(s[0])+'</h2><div class="pbody">'+s[1].map(block).join('')+'</div></section>';}).join('')+
-        '<section class="pgal" aria-label="'+esc(p.name)+' project images">'+[1,2,3].map(function(n){return '<figure class="g'+n+'"><div class="slot" data-img="'+p.id+'_'+n+'"><i class="sl-in"></i><span class="mono">PROJECT IMAGE 0'+n+'</span></div></figure>';}).join('')+'</section>'+
-        '<div class="pnext"><a class="btn" href="#work">ALL WORK</a><a class="nx" href="#'+next.id+'"><small>NEXT PROJECT →</small>'+esc(next.name)+'</a></div>'+
+        '<section class="pgal" aria-label="'+(AR?esc(T('project images'))+' '+esc(p.name):esc(p.name)+' project images')+'">'+[1,2,3].map(function(n){return '<figure class="g'+n+'"><div class="slot" data-img="'+p.id+'_'+n+'"><i class="sl-in"></i><span class="mono">'+esc(T('PROJECT IMAGE'))+' 0'+n+'</span></div></figure>';}).join('')+'</section>'+
+        '<div class="pnext"><a class="btn" href="#work">'+esc(T('ALL WORK'))+'</a><a class="nx" href="#'+next.id+'"><small>'+esc(T('NEXT PROJECT →'))+'</small>'+esc(next.name)+'</a></div>'+
       '</div>';
     host.appendChild(el);
   });
@@ -1026,8 +1149,8 @@ body:not([data-view="home"]) .stage{display:none}
 
   /* ---------- nav / contact ---------- */
   var links=$('links'), menuBtn=$('menuBtn');
-  function closeMenu(){ links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='MENU'; }
-  menuBtn.addEventListener('click',function(){ var o=links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded',o); menuBtn.textContent=o?'CLOSE':'MENU'; onScroll(); });
+  function closeMenu(){ links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent=T('MENU'); }
+  menuBtn.addEventListener('click',function(){ var o=links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded',o); menuBtn.textContent=o?T('CLOSE'):T('MENU'); onScroll(); });
   function onScroll(){ nav.classList.toggle('solid', window.scrollY>40 || links.classList.contains('open')); updateTone(); }
   window.addEventListener('scroll',onScroll,{passive:true});
   if(LINKEDIN_URL) $('liLink').href=LINKEDIN_URL;
@@ -1035,7 +1158,7 @@ body:not([data-view="home"]) .stage{display:none}
   /* ---------- About video: muted autoplay loop, one shared sound toggle ---------- */
   (function(){
     var vids=qa('.jvid'), btns=qa('.snd'), soundOn=false;
-    function paint(){ btns.forEach(function(b){ b.setAttribute('aria-pressed',soundOn); b.setAttribute('aria-label',soundOn?'Mute video':'Unmute video'); }); }
+    function paint(){ btns.forEach(function(b){ b.setAttribute('aria-pressed',soundOn); b.setAttribute('aria-label',soundOn?T('Mute video'):T('Unmute video')); }); }
     function apply(){ vids.forEach(function(v){ v.muted=!soundOn; }); paint(); }
     vids.forEach(function(v){
       var frame=v.parentNode;
@@ -1392,7 +1515,7 @@ body:not([data-view="home"]) .stage{display:none}
         var n = parseInt(String(d.count).replace(/\D/g,''), 10);
         if(n >= SHOW_AFTER){
           var el = document.getElementById('visits');
-          el.innerHTML = '<b>' + n.toLocaleString('en-US') + '</b> visits';
+          el.innerHTML = '<b>' + n.toLocaleString('en-US') + '</b>' + (window.LANG==='ar' ? ' زيارة' : ' visits');
           el.hidden = false;
         }
       }).catch(function(){});
