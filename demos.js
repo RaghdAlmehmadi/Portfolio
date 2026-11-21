@@ -243,7 +243,7 @@
         '<div class="qa-tools" role="toolbar" aria-label="'+esc(t('Reading settings'))+'">'+
           '<button type="button" data-a="dec" aria-label="'+esc(t('Smaller text'))+'">A−</button>'+
           '<button type="button" data-a="inc" aria-label="'+esc(t('Larger text'))+'">A+</button>'+
-          '<button type="button" data-a="con" aria-pressed="false">◐ '+esc(t('High contrast'))+'</button></div>'+
+          '<button type="button" data-a="con" aria-pressed="false">'+esc(t('High contrast'))+'</button></div>'+
         '<div class="qa-page" dir="rtl" lang="ar"><p class="qa-sura">سورة الفاتحة</p><div class="qa2-done"></div><p class="qa2-cur"></p></div>'+
         '<p class="qa2-ask">'+esc(t('Which word completes the verse?'))+'</p>'+
         '<div class="qa2-opts" dir="rtl" lang="ar"></div>'+
@@ -552,7 +552,7 @@
   '.sn2-act{margin-top:auto}.sn2-act .dm-btn{width:100%;padding:.65rem 1rem;font-size:.9rem}'+
   '.sn-foot{margin:1rem 0 0;font-size:.78rem;color:var(--mute)}'+
   'html[lang=ar] .demo .mono{letter-spacing:0}'+
-  '@media (max-width:820px){.rk2,.in2-res{grid-template-columns:1fr}.sn2-cards{grid-template-columns:1fr}.in2-a{grid-template-columns:1fr}.rk2-n{max-width:70%}.rk2-screen{min-height:300px}.in2-card{max-width:200px}}'+
+  '@media (max-width:820px){.dm-ov{place-items:start center;padding-top:2.5rem}.rk2,.in2-res{grid-template-columns:1fr}.sn2-cards{grid-template-columns:1fr}.in2-a{grid-template-columns:1fr}.rk2-n{max-width:70%}.rk2-screen{min-height:300px}.in2-card{max-width:200px}}'+
   '@media (prefers-reduced-motion:reduce){.demo *{animation-duration:.01s!important;animation-iteration-count:1!important;transition:none!important}}';
   var st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
 })();
