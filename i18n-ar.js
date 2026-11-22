@@ -109,7 +109,7 @@ window.AR = {
 "INVENTION.": "إلى اختراع.",
 "A DESKTOP DEVICE THAT NOTICES WHEN ATTENTION LEAVES THE TASK.": "جهازٌ مكتبي يدرك متى يتشتّت انتباهك.",
 "The device recognises when a person’s attention has drifted away from the work in front of them, then responds with a graduated intervention that brings them back.": "يتبيّن الجهاز انصراف الانتباه عن العمل، فيستجيب بتدخّلٍ متدرّج يُعيد صاحبه إلى ما بين يديه.",
-"Awarded the Gold Medal at SGiE 2026, the Saudi Global Inventions & Innovations Expo.": "وتُوِّج بالميدالية الذهبية في معرض SGiE 2026 الدولي للاختراعات والابتكارات.",
+"Awarded the Gold Medal at SGiE 2026, the Saudi Global Inventions & Innovations Expo.": "تُوِّج بالميدالية الذهبية في معرض SGiE 2026 الدولي للاختراعات والابتكارات.",
 "Rakeez, Patent Pending, technical concept, prototype": "Rakeez، طلب براءة قيد الفحص، تصوّر تقني، نموذج أولي",
 "Patent Pending": "طلب براءة قيد الفحص",
 "Technical concept": "تصوّر تقني",
@@ -187,9 +187,9 @@ window.AR = {
 
 /* ---- contact + footer ---- */
 "07 / CONTACT": "07 / تواصل",
-"LET’S BUILD": "لنصنعِ",
-"WHAT’S": "الغدَ",
-"NEXT.": "معًا.",
+"LET’S BUILD": "لديك فكرة؟",
+"WHAT’S": "فلنبدأ",
+"NEXT.": "من هنا.",
 "Email": "البريد الإلكتروني",
 "WhatsApp": "واتساب",
 "LinkedIn account": "حساب لينكدإن",
@@ -1135,5 +1135,6 @@ window.AR = {
 "football": "كورة",
 "setup": "مكتب",
 "travel": "سفر",
-"asmr": "استرخاء"
+"asmr": "استرخاء",
+"I turn curiosity into experiments, ideas into prototypes, and challenges into practical solutions.": "أُحوِّل الفضولَ إلى تجربة، والفكرةَ إلى نموذجٍ أولي، والتحدّيَ إلى حلٍّ عملي."
 };
