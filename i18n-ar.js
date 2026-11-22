@@ -187,9 +187,9 @@ window.AR = {
 
 /* ---- contact + footer ---- */
 "07 / CONTACT": "07 / تواصل",
-"LET’S BUILD": "كل اختراع",
-"WHAT’S": "بدأ بسؤال.",
-"NEXT.": "ما سؤالك؟",
+"LET’S BUILD": "يسعدني",
+"WHAT’S": "",
+"NEXT.": "تواصلك.",
 "Email": "البريد الإلكتروني",
 "WhatsApp": "واتساب",
 "LinkedIn account": "حساب لينكدإن",
@@ -1153,5 +1153,19 @@ window.AR = {
 "As you scroll, the current runs down the line. Each skill it passes powers the next, until the light comes on.": "مع كل تمريرةٍ يسري التيار في السلك، وكل مهارةٍ يمرّ بها تمدّ التي تليها بالطاقة، حتى يضيء المصباح.",
 "Raghad Almihmadi, inventor.": "رغد المحمادي، مخترعة.",
 "What the light has revealed so far.": "ما كشفه النور حتى الآن.",
-"Switch the light": "تشغيل المصباح وإطفاؤه"
+"Switch the light": "تشغيل المصباح وإطفاؤه",
+"Who is Raghad?": "من هي رغد؟",
+"Academic path, skills and achievements, step by step.": "المسيرة الأكاديمية والمهارات والإنجازات، خطوةً بخطوة.",
+"Bachelor of Information Technology": "بكالوريوس تقنية المعلومات",
+"I graduated from the University of Jeddah in 2024 with a degree in Information Technology, with second-class honours and a GPA of 4.55 out of 5.": "تخرّجتُ في جامعة جدة عام 2024 حاملةً درجة البكالوريوس في تقنية المعلومات، بمرتبة الشرف الثانية ومعدل 4.55 من 5.",
+"Second-class honours": "مرتبة الشرف الثانية",
+"GPA 4.55 / 5": "المعدل 4.55 من 5",
+"I then deepened my programming skills, building software and web applications that put ideas into practice.": "ثم عمّقتُ مهاراتي في البرمجة، فطوّرتُ برمجياتٍ وتطبيقات ويب تنقل الأفكار إلى حيّز التطبيق.",
+"Software alone was not enough, so I moved into electronics and built prototypes that can be held and tested.": "ولأن البرمجيات وحدها لا تكفي، اتجهتُ إلى الإلكترونيات وبناء نماذج أولية ملموسة قابلة للاختبار.",
+"Professionally, I trained in the Cybersecurity Department at Saudi Airlines, then joined the Ministry of Energy as a Digital Strategy and Awareness Analyst.": "وعلى الصعيد المهني، تدرّبتُ في إدارة الأمن السيبراني بالخطوط السعودية، ثم انضممتُ إلى وزارة الطاقة محلّلةً للاستراتيجية الرقمية والتوعية.",
+"Along the way, I learned to give every idea a clear form, from interface design to well-structured documents and presentations.": "وفي أثناء ذلك، تعلّمتُ أن أمنح كل فكرة صورةً واضحة، من تصميم الواجهات إلى إعداد المستندات والعروض التقديمية المحكمة.",
+"All of this came together in innovation: hackathons, exhibitions, and a patent application for my own invention.": "ثم اجتمع ذلك كله في الابتكار: مشاركاتٌ في الهاكاثونات والمعارض، وطلبُ براءة اختراعٍ لابتكاري الخاص.",
+"The inventor": "المخترعة",
+"Achievements": "الإنجازات",
+"Select a medal to light it up.": "اضغط على أي وسام لإضاءته."
 };
