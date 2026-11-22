@@ -289,7 +289,12 @@
       }
     };
     function render(){
-      if(S.app){ win.hidden=false; win.classList.toggle('max',S.max); q(el,'.pc-wtitle').textContent=t(NM[S.app]); wb.innerHTML=APP[S.app](); wb.setAttribute('data-app',S.app);
+      if(S.app){ win.hidden=false; win.classList.toggle('max',S.max); q(el,'.pc-wtitle').textContent=t(NM[S.app]);
+        /* keep every scrolled area where it was, so ticking a box never jumps the view */
+        var same=wb.getAttribute('data-app')===S.app, keep=[], all, ws=wb.scrollTop, sy=window.scrollY;
+        if(same){ all=wb.querySelectorAll('*'); for(var i=0;i<all.length;i++) if(all[i].scrollTop) keep.push([i,all[i].scrollTop]); }
+        var n0=same?all.length:0; wb.innerHTML=APP[S.app](); wb.setAttribute('data-app',S.app);
+        if(same){ wb.scrollTop=ws; all=wb.querySelectorAll('*'); if(all.length===n0) keep.forEach(function(k){ all[k[0]].scrollTop=k[1]; }); if(Math.abs(window.scrollY-sy)>2) window.scrollTo(window.scrollX,sy); }
         var box=q(wb,'.tm-msgs,.wa-msgs'); if(box) box.scrollTop=1e5; } else win.hidden=true;
       q(el,'.pc-appname').textContent= S.app ? t(NM[S.app]) : t('Finder');
       qa(el,'.pc-ico').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-open')===S.app); });
@@ -1148,6 +1153,10 @@
   '.vr-ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(4,14,26,.62);backdrop-filter:blur(6px);padding:1rem;z-index:5}.vr-ov[hidden]{display:none}'+
   '.vr-ovc{max-width:440px;text-align:center;color:#fff;display:grid;gap:.8rem;justify-items:center}.vr-ovi{font-size:3rem;animation:dmBob 2.4s ease-in-out infinite}.vr-ovc h4{margin:0;font-size:clamp(1.4rem,3vw,2rem)}.vr-ovc p{margin:0;line-height:1.7;color:rgba(255,255,255,.85)}'+
   '.vr-st{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;width:100%}.vr-st div{background:rgba(255,255,255,.1);border-radius:12px;padding:.7rem;display:grid}.vr-st b{font-size:1.3rem}.vr-st small{font-size:.75rem;opacity:.75}'+
+  '@media (max-width:820px){.vr-ph,html[dir=rtl] .vr-ph{top:auto!important;bottom:10px!important;left:10px!important;right:10px!important;width:auto!important;transform:none!important;padding:4px;border-radius:18px}'+
+  '.vr-ph-in{min-height:0!important;flex-direction:row;align-items:center;gap:10px;padding:7px 10px;border-radius:14px;text-align:start}.vr-ph-h{display:none}.vr-ph-c{display:flex;align-items:center;gap:8px;margin:0}.vr-ph-c>b,.vr-ph-c>small{display:block}.vr-kid{font-size:1.5rem!important}'+
+  '.vr-ph-btn{width:auto;margin:0;margin-inline-start:auto;padding:.55rem .9rem}.vr-comp{width:46px!important;height:46px!important;flex:none}.vr-dist{font-size:1.15rem!important}.vr-ph-s{flex:1;font-size:.66rem}'+
+  '.vr-pad{bottom:84px!important}.vr-toast{top:60px!important;bottom:auto!important}}'+
   '@media (max-width:820px){.vr-view{height:min(560px,calc(100svh - 160px))}.vr-ph{width:132px;bottom:auto;top:52px;right:10px}.vr-ph-in{min-height:170px}.vr-comp{width:70px;height:70px}.vr-dist{font-size:1.3rem}.vr-help{display:none}.vr-toast{top:auto;bottom:130px}}'+
   /* quraa */
   '.qa3{--qs:1.8rem}'+
