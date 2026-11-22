@@ -1167,5 +1167,7 @@ window.AR = {
 "All of this came together in innovation: hackathons, exhibitions, and a patent application for my own invention.": "ثم اجتمع ذلك كله في الابتكار: مشاركاتٌ في الهاكاثونات والمعارض، وطلبُ براءة اختراعٍ لابتكاري الخاص.",
 "The inventor": "المخترعة",
 "Achievements": "الإنجازات",
-"Select a medal to light it up.": "اضغط على أي وسام لإضاءته."
+"Select a medal to light it up.": "اضغط على أي وسام لإضاءته.",
+"GPA out of 5": "المعدل التراكمي من 5",
+"Graduation year": "سنة التخرج"
 };
