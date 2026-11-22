@@ -1136,5 +1136,17 @@ window.AR = {
 "setup": "مكتب",
 "travel": "سفر",
 "asmr": "استرخاء",
-"I turn curiosity into experiments, ideas into prototypes, and challenges into practical solutions.": "أُحوِّل الفضولَ إلى تجربة، والفكرةَ إلى نموذجٍ أولي، والتحدّيَ إلى حلٍّ عملي."
+"I turn curiosity into experiments, ideas into prototypes, and challenges into practical solutions.": "أُحوِّل الفضولَ إلى تجربة، والفكرةَ إلى نموذجٍ أولي، والتحدّيَ إلى حلٍّ عملي.",
+"Company announcements": "إعلانات الشركة",
+"Only admins can send messages": "يقتصر الإرسال في هذه المجموعة على المشرفين",
+"Today": "اليوم",
+"typing…": "يكتب…",
+"is typing…": "يكتب…",
+"online": "متصل الآن",
+"Type a message": "اكتب رسالة",
+"Search or start a new chat": "ابحث أو ابدأ محادثة جديدة",
+"Unread": "غير المقروءة",
+"Groups": "المجموعات",
+"Start the workday": "ابدأ يوم العمل",
+"Today’s task: close November invoices before 4:00 PM.": "مهمّتك اليوم: إغلاق فواتير نوفمبر قبل الرابعة عصرًا."
 };
