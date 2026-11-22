@@ -49,7 +49,7 @@ window.AR = {
 
 /* ---- experience ---- */
 "02 / EXPERIENCE": "02 / الخبرات",
-"WHERE TECHNOLOGY MEETS PRACTICE.": "التقنية في ميدان العمل.",
+"WHERE TECHNOLOGY MEETS PRACTICE.": "حيث تتحوّل المعرفة إلى خبرة.",
 "Ministry of Energy": "وزارة الطاقة",
 "Ministry of Energy — Saudi Arabia logo": "شعار وزارة الطاقة — المملكة العربية السعودية",
 "Saudia": "السعودية",
@@ -124,7 +124,7 @@ window.AR = {
 
 /* ---- recognition ---- */
 "05 / RECOGNITION": "05 / الإنجازات",
-"PROJECTS THAT MADE AN IMPACT.": "مشاريع نافست وفازت.",
+"PROJECTS THAT MADE AN IMPACT.": "مشاريعُ حازت جوائز.",
 "GOLD": "ميدالية",
 "MEDAL": "ذهبية",
 "RAKEEZ": "Rakeez",
@@ -1011,5 +1011,17 @@ window.AR = {
 "Start walking": "ابدأ المشي",
 "You found your child in": "وجدتَ طفلك خلال",
 "8 members": "8 أعضاء",
-"42 members": "42 عضوًا"
+"42 members": "42 عضوًا",
+/* ---- Raghad world ---- */
+"Step inside": "تفضّل بالدخول",
+"Raghad’s world": "عالمُ رغد",
+"A room where every award has its own frame, every skill its own book, and every window opens onto an idea. Drag to look around, and tap anything to bring it closer.": "غرفةٌ لكلّ جائزةٍ فيها إطار، ولكلّ مهارةٍ كتاب، ونافذتُها تطلّ على فكرة. اسحب لتتجوّل بنظرك، واضغط على أيّ شيء لتقترب منه.",
+"Wall of awards": "جدار الجوائز",
+"The skills library": "مكتبة المهارات",
+"Whole room": "الغرفة كاملة",
+"The window": "النافذة",
+"Look around": "تجوّل في الغرفة",
+"Best University Explainer": "أفضل شرح جامعي",
+"Saudi Accounting Association Hackathon": "هاكاثون الجمعية السعودية للمحاسبة",
+"Design & Productivity": "التصميم والإنتاجية"
 };
