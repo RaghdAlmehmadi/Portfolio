@@ -42,14 +42,14 @@ window.AR = {
 "MEET RAGHAD": "تعرّف على رغد",
 
 /* ---- the question ---- */
-"What if there’s a better way?": "ماذا لو كان ثمّةَ طريقٌ أفضل؟",
-"WHAT IF THERE’S": "ماذا لو كان",
-"A BETTER WAY?": "ثمّةَ طريقٌ أفضل؟",
+"What if there’s a better way?": "ماذا لو كانت هناك طريقة أفضل؟",
+"WHAT IF THERE’S": "ماذا لو كانت هناك",
+"A BETTER WAY?": "طريقة أفضل؟",
 "That question is where most of my ideas begin.": "من هذا السؤال تولد أغلب أفكاري.",
 
 /* ---- experience ---- */
 "02 / EXPERIENCE": "02 / الخبرات",
-"WHERE TECHNOLOGY MEETS PRACTICE.": "حين تلتقي المعرفةُ بالميدان.",
+"WHERE TECHNOLOGY MEETS PRACTICE.": "التقنية في ميدان العمل.",
 "Ministry of Energy": "وزارة الطاقة",
 "Ministry of Energy — Saudi Arabia logo": "شعار وزارة الطاقة — المملكة العربية السعودية",
 "Saudia": "السعودية",
@@ -104,10 +104,10 @@ window.AR = {
 
 /* ---- innovation ---- */
 "04 / INNOVATION": "04 / الابتكار",
-"ONE IDEA.": "فكرةٌ واحدة…",
+"ONE IDEA.": "من فكرةٍ",
 "ONE": "",
-"INVENTION.": "صارت اختراعًا.",
-"A DESKTOP DEVICE THAT NOTICES WHEN ATTENTION LEAVES THE TASK.": "جهازٌ على مكتبك، يلتقط شرود الانتباه في لحظته الأولى.",
+"INVENTION.": "إلى اختراع.",
+"A DESKTOP DEVICE THAT NOTICES WHEN ATTENTION LEAVES THE TASK.": "جهازٌ مكتبي يدرك متى يتشتّت انتباهك.",
 "The device recognises when a person’s attention has drifted away from the work in front of them, then responds with a graduated intervention that brings them back.": "يتبيّن الجهاز انصراف الانتباه عن العمل، فيستجيب بتدخّلٍ متدرّج يُعيد صاحبه إلى ما بين يديه.",
 "Awarded the Gold Medal at SGiE 2026, the Saudi Global Inventions & Innovations Expo.": "وتُوِّج بالميدالية الذهبية في معرض SGiE 2026 الدولي للاختراعات والابتكارات.",
 "Rakeez, Patent Pending, technical concept, prototype": "Rakeez، طلب براءة قيد الفحص، تصوّر تقني، نموذج أولي",
@@ -124,7 +124,7 @@ window.AR = {
 
 /* ---- recognition ---- */
 "05 / RECOGNITION": "05 / الإنجازات",
-"PROJECTS THAT MADE AN IMPACT.": "على منصّات التتويج.",
+"PROJECTS THAT MADE AN IMPACT.": "مشاريع نافست وفازت.",
 "GOLD": "ميدالية",
 "MEDAL": "ذهبية",
 "RAKEEZ": "Rakeez",
@@ -156,8 +156,8 @@ window.AR = {
 
 /* ---- exhibitions ---- */
 "06 / EXHIBITIONS": "06 / المعارض",
-"WHERE IDEAS": "أفكارٌ",
-"MEET THE WORLD.": "تعبر إلى العالم.",
+"WHERE IDEAS": "حيث تلتقي الأفكار",
+"MEET THE WORLD.": "بالعالم.",
 "EXHIBITION · SGiE 2026 🇸🇦": "معرض · SGiE 2026 🇸🇦",
 "01 / SGiE 2026": "01 / SGiE 2026",
 "SGiE 2026": "SGiE 2026",
@@ -175,8 +175,8 @@ window.AR = {
 
 /* ---- moments ---- */
 "MOMENTS": "لحظات",
-"ALONG": "محطاتٌ",
-"THE WAY.": "لا تُنسى.",
+"ALONG": "لقطاتٌ",
+"THE WAY.": "من الرحلة.",
 "PHOTO SLOT": "صورة",
 "Fifth Student Scientific Forum · 2022": "الملتقى العلمي الطلابي الخامس · 2022",
 "Third Place · Innovation & Entrepreneurship · 2022": "المركز الثالث · الابتكار وريادة الأعمال · 2022",
@@ -854,5 +854,22 @@ window.AR = {
 "Back to invoices": "العودة إلى الفواتير",
 "All invoices closed!": "أُقفلت الفواتير كلها!",
 "Time on task": "الوقت على المهمة",
-"Start a new day": "ابدأ يومًا جديدًا"
+"Start a new day": "ابدأ يومًا جديدًا",
+/* ---- projects page + skills ---- */
+"Try the interactive prototype": "جرّب النموذج التفاعلي",
+"PROJECTS": "المشاريع",
+"All projects": "كل المشاريع",
+"Inventions, products and prototypes. Open any project to explore it, and try its interactive prototype yourself.": "اختراعاتٌ ومنتجاتٌ ونماذج أولية. افتح أيّ مشروع لتتعرّف إليه، وجرّب نموذجه التفاعلي بنفسك.",
+"Saudi National Day": "اليوم الوطني السعودي",
+"ALL PROJECTS": "كل المشاريع",
+"Web Development": "تطوير الويب",
+"IoT": "إنترنت الأشياء",
+"GPS": "GPS",
+"Innovation": "الابتكار",
+"Patent filing": "إعداد طلبات براءات الاختراع",
+"Hackathons": "الهاكاثونات",
+"Pitching & exhibitions": "العرض والمشاركة في المعارض",
+"Problem Solving": "حلّ المشكلات",
+"Cybersecurity": "الأمن السيبراني",
+"Governance, Risk & Compliance": "الحوكمة والمخاطر والامتثال"
 };
