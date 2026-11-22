@@ -187,9 +187,9 @@ window.AR = {
 
 /* ---- contact + footer ---- */
 "07 / CONTACT": "07 / تواصل",
-"LET’S BUILD": "لديك فكرة؟",
-"WHAT’S": "فلنبدأ",
-"NEXT.": "من هنا.",
+"LET’S BUILD": "كل اختراع",
+"WHAT’S": "بدأ بسؤال.",
+"NEXT.": "ما سؤالك؟",
 "Email": "البريد الإلكتروني",
 "WhatsApp": "واتساب",
 "LinkedIn account": "حساب لينكدإن",
@@ -1148,5 +1148,10 @@ window.AR = {
 "Unread": "غير المقروءة",
 "Groups": "المجموعات",
 "Start the workday": "ابدأ يوم العمل",
-"Today’s task: close November invoices before 4:00 PM.": "مهمّتك اليوم: إغلاق فواتير نوفمبر قبل الرابعة عصرًا."
+"Today’s task: close November invoices before 4:00 PM.": "مهمّتك اليوم: إغلاق فواتير نوفمبر قبل الرابعة عصرًا.",
+"From one question to a light.": "من سؤالٍ واحد، إلى نور.",
+"As you scroll, the current runs down the line. Each skill it passes powers the next, until the light comes on.": "مع كل تمريرةٍ يسري التيار في السلك، وكل مهارةٍ يمرّ بها تمدّ التي تليها بالطاقة، حتى يضيء المصباح.",
+"Raghad Almihmadi, inventor.": "رغد المحمادي، مخترعة.",
+"What the light has revealed so far.": "ما كشفه النور حتى الآن.",
+"Switch the light": "تشغيل المصباح وإطفاؤه"
 };
