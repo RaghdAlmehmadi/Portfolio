@@ -509,6 +509,7 @@ html[lang="ar"] .sig{font-size:clamp(2rem,5vw,3.8rem)}
 html[lang="ar"] .moment .bq{font-size:clamp(2rem,8.4vw,8.4rem);line-height:1.2}
 html[lang="ar"] .bq span+span{padding-left:0;padding-right:7vw}
 html[lang="ar"] .rank{font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:1.1}
+html[lang="ar"] .rank:not(.gold) small{display:block;font:600 clamp(.85rem,1.4vw,1.1rem)/1 var(--f-body);color:var(--mute);margin-bottom:.5rem;letter-spacing:0}
 html[lang="ar"] .rank.gold small{font-size:clamp(.9rem,1.5vw,1.2rem);margin-top:.4rem}
 html[lang="ar"] .stat b{line-height:1}
 html[lang="ar"] .prose,html[lang="ar"] .pbody,html[lang="ar"] .job li,html[lang="ar"] .info p{line-height:1.85}
@@ -727,7 +728,7 @@ html[dir="rtl"] .moments figcaption{text-align:right}
         <li class="rv"><span class="rank">3RD</span><div><h3>EBDAATHON</h3><p>Third Place — 2026</p><p class="sub">Sanabel — Islamic Financial Solutions Track</p></div><a href="#sanabil">PROJECT →</a></li>
         <li class="rv"><span class="rank">TOP 5</span><div><h3>HASEEB SMART TAX</h3><p>Top 5 Finalist — Saudi Accounting Association Hackathon</p><p class="sub">2024</p></div><span></span></li>
         <li class="rv"><span class="rank">3RD</span><div><h3>INARA</h3><p>Third Place — Fifth Scientific Forum</p><p class="sub">University of Jeddah · 2022 · Individual Participant</p></div><a href="#inara">PROJECT →</a></li>
-        <li class="rv"><span class="rank">2ND</span><div><h3>QUR’AN APPLICATION</h3><p>Second Place — Qur’an Kareem Competition</p><p class="sub">University of Jeddah · 2022</p></div><a href="#quraa">PROJECT →</a></li>
+        <li class="rv"><span class="rank">2ND</span><div><h3>QURAA</h3><p>Second Place — Qur’an Kareem Competition</p><p class="sub">University of Jeddah · 2022</p></div><a href="#quraa">PROJECT →</a></li>
       </ul>
       <div class="stats rv">
         <div class="stat"><b data-count="10" data-suffix="+">10+</b><span class="mono">Hackathons &amp; Innovation Programs</span></div>
@@ -1079,6 +1080,7 @@ html[dir="rtl"] .moments figcaption{text-align:right}
     return '';
   }
   if(AR) trDOM();
+  if(AR){ var RK={'1ST':['المركز','الأول'],'2ND':['المركز','الثاني'],'3RD':['المركز','الثالث'],'TOP 5':['ضمن','أفضل 5']}; qa('.rank:not(.gold)').forEach(function(r){ var m=RK[r.textContent.trim()]; if(m) r.innerHTML='<small>'+m[0]+'</small>'+m[1]; }); }
   var host = $('projects');
   P.forEach(function(p,i){
     var next = P[(i+1)%P.length];
